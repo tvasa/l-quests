@@ -79,3 +79,5 @@ The UI is customizable in the HTML/CSS files.
 📌 Summary
 
 🔹 Simple.🔹 Focused on item collection.🔹 Easy to expand.
+
+![alt text](image.png)
