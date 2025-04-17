@@ -4,7 +4,7 @@ RegisterNetEvent('quest:completeCurrent', function()
     local src = source
     local Player = RSGCore.Functions.GetPlayer(src)
     if not Player then
-        TriggerClientEvent('ox_lib:notify', src, { title = "Chyba", description = "Hráč nebyl nalezen.", type = 'error', duration = 5000 })
+        TriggerClientEvent('ox_lib:notify', src, { title = "Error", description = "Player not found.", type = 'error', duration = 5000 })
         return
     end
 
@@ -18,14 +18,14 @@ RegisterNetEvent('quest:completeCurrent', function()
 
         local Quest = Config.Quests[questId]
         if not Quest then
-            TriggerClientEvent('ox_lib:notify', src, { title = "Chyba", description = "Úkol s tímto ID neexistuje.", type = 'error', duration = 5000 })
+            TriggerClientEvent('ox_lib:notify', src, { title = "Error", description = "Quest with this ID does not exist.", type = 'error', duration = 5000 })
             return
         end
 
         for _, requestItem in ipairs(Quest.request) do
             local item = Player.Functions.GetItemByName(requestItem.item)
             if not item or item.amount < requestItem.quantity then
-                TriggerClientEvent('ox_lib:notify', src, { title = "Úkol", description = "Nemáš požadované věci k dokončení úkolu!", type = 'error', duration = 5000 })
+                TriggerClientEvent('ox_lib:notify', src, { title = "Quest", description = "You do not have the required items to complete the quest!", type = 'error', duration = 5000 })
                 return
             end
         end
@@ -50,7 +50,7 @@ RegisterNetEvent('quest:completeCurrent', function()
             })
         end
 
-        TriggerClientEvent('ox_lib:notify', src, { title = "Úkol", description = "Úkol úspěšně dokončen! Získal jsi odměnu.", type = 'success', duration = 5000 })
+        TriggerClientEvent('ox_lib:notify', src, { title = "Quest", description = "Quest successfully completed! You have received a reward.", type = 'success', duration = 5000 })
         TriggerClientEvent('quest:closeUI', src)
     
     end)
@@ -78,7 +78,7 @@ AddEventHandler("quest:open", function()
 
         local Quest = Config.Quests[questId]
         if not Quest then
-            TriggerClientEvent('ox_lib:notify', src, { title = "Chyba", description = "Úkol s tímto ID neexistuje.", type = 'error', duration = 5000 })
+            TriggerClientEvent('ox_lib:notify', src, { title = "Error", description = "Quest with this ID does not exist.", type = 'error', duration = 5000 })
             return
         end
     end)
@@ -107,8 +107,8 @@ RegisterNetEvent("quest:getCurrentQuest", function()
             TriggerClientEvent("quest:open", src, questId)
         else
             TriggerClientEvent('ox_lib:notify', src, {
-                title = "Úkol",
-                description = "Žádný dostupný úkol.",
+                title = "Quest",
+                description = "No available quests.",
                 type = 'error',
                 duration = 5000
             })
