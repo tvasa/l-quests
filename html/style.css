@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Rye&family=Smokum&family=Wellfleet&display=swap");
+
+* {
+  font-family: "Wellfleet", serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  visibility: hidden;
+}
+
+.paper {
+  background: url("paper.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  height: 90%;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 30px;
+  overflow: hidden;
+}
+
+#quest-title {
+  font-size: 28px;
+  color: #2e1e1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.quest-text-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 20px;
+  min-height: 200px;
+  max-height: 350px;
+}
+
+#quest-text {
+  font-size: 20px;
+  color: #4a2d2f;
+  text-align: center;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 0 20px;
+  line-height: 1.4;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+#quest-text::-webkit-scrollbar {
+  width: 15px;
+}
+#quest-text::-webkit-scrollbar-track {
+  background: #e7d6bc;
+  border-radius: 10px;
+}
+#quest-text::-webkit-scrollbar-thumb {
+  background: #070707;
+  border-radius: 10px;
+}
+#quest-text::-webkit-scrollbar-thumb:hover {
+  background: #8c6e47;
+}
+
+.request-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  margin-top: auto;
+}
+
+.request-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 2px solid #b7a081;
+  border-radius: 8px;
+  background-color: #f4e7d0;
+  padding: 5px;
+  transition: transform 0.2s ease;
+}
+
+.request-images img:hover {
+  transform: scale(1.1);
+  border-color: #8c6e47;
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 0 60px;
+}
+
+button {
+  background-color: #b7a081;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 200px;
+  justify-self: center;
+}
+
+button:hover {
+  background-color: #8c6e47;
+  transform: scale(1.05);
+}
+
+#complete-button {
+  background-color: #84b46a;
+}
+#complete-button:hover {
+  background-color: #6f8e53;
+}
+
+#close-button {
+  background-color: #9e4f4b;
+}
+#close-button:hover {
+  background-color: #7a3732;
+}
