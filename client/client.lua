@@ -1,9 +1,3 @@
-
-
-RegisterCommand("openquest", function()
-    TriggerServerEvent("quest:getCurrentQuest")
-end, false)
-
 RegisterNetEvent("quest:open", function(questId)
     local quest = Config.Quests[questId or 1]
     if quest then
